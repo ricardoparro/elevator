@@ -1,0 +1,18 @@
+require 'minitest/spec'
+require 'minitest/autorun'
+require './lib/elevator.rb'
+describe Elevator do
+
+    it "can change direction" do
+        elevator = Elevator.new
+        @direction = elevator.change_direction("Up")
+        assert_match @direction, "Up"
+    end
+    it "can move to that floor"
+    it "can maintain a list of floor numbers"
+    it "can move through the floors"
+    it "can maintain a list of floor numbers"
+    it "can move through the floors"
+    it "can reverse direction when reaches the top"
+    
+end

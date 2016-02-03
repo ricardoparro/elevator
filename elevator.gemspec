@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
     spec.license       = "MIT"
 
     spec.files         = ['lib/elevator.rb']
-    spec.executables   = ['bin/elvator']
+    spec.executables   = ['bin/elevator']
     spec.test_files    = ['tests/test_elevator.rb']
     spec.require_paths = ["lib"]
 end
