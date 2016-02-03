@@ -11,6 +11,7 @@ describe Elevator do
         @elevator.change_direction(Direction::UP)
         assert_equal @elevator.current_direction, Direction::UP
     end
+
     it "can change direction to down" do
         @elevator.change_direction(Direction::DOWN)
         assert_equal @elevator.current_direction, Direction::DOWN 
@@ -20,6 +21,12 @@ describe Elevator do
         assert_equal(@elevator.current_floor,2)
     end
     it "can maintain a list of floor numbers" do
+        @elevator.change_floor(2);
+        @elevator.change_floor(3);
+        @elevator.change_floor(4);
+        
+        assert(@elevator.floor_list.count,3)
+            
     end
     it "can move through the floors"
     it "can reverse direction when reaches the top"
