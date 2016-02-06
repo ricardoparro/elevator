@@ -19,8 +19,24 @@ class Elevator
     end
     
     def move_to_floor(floor_number)
-       
-      while @current_floor != floor_number do
+      start_elevator_engine(floor_number)
+      if(reached_top?)
+        revert_direction
+      end
+    end
+
+    private
+    
+    def reached_top?
+       @current_floor == @number_of_floors
+    end
+
+    def revert_direction
+        move_to_floor(1)
+    end
+
+    def start_elevator_engine(floor_number)
+      while self.current_floor != floor_number do
       
         puts Display::build_alert(Alert::PASSING_BY, @current_floor)
         sleep(@distance_between_floors)
@@ -32,17 +48,10 @@ class Elevator
           @current_floor -= 1
           @current_direction = Direction::DOWN
         end
-     
-      end
-      puts Display::build_alert(Alert::ARRIVED_TO_FLOOR, @current_floor)
-  
-      if(@current_floor == @number_of_floors )
-        move_to_floor(1)
+       puts Display::build_alert(Alert::ARRIVED_TO_FLOOR, @current_floor) 
       end
     end
 
-    private
-    
     def reach_top?
     
     end
@@ -57,12 +66,15 @@ class Direction
     MAINTENANCE = 4
 end
 
-class Alert
-  PASSING_BY = "passing by floor"
-  ARRIVED_TO_FLOOR = "arrived to floor"
-end
 class Display
   def self.build_alert(alert, floor)
     return alert + " " + floor.to_s + "\n"
   end
 end
+
+class Alert
+  PASSING_BY = "passing by floor"
+  ARRIVED_TO_FLOOR = "arrived to floor"
+end
+
+
