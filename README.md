@@ -1,6 +1,6 @@
 The Elevator
 ======================
-This is a solution for https://gist.github.com/ciaranarcher/fd8ebe2cad2f15f6e0d1 
+This is a solution for  an elevator exercise 
 
 ![Screenshot](/doc/elevator.jpg)
 
