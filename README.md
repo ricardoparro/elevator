@@ -2,7 +2,7 @@ The Elevator
 ======================
 This is a solution for https://gist.github.com/ciaranarcher/fd8ebe2cad2f15f6e0d1 
 
-![Screenshot]()(/doc/elevator.jpg)
+![Screenshot](/doc/elevator.jpg)
 
 Notes:
 ---- --
